@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { cuisines } from "./data/recipes";
+import { cuisineImages } from "./data/cuisineImages";
+
 import "./App.css";
 
 function App() {
@@ -116,6 +118,17 @@ function App() {
                     <li key={ing}>{ing}</li>
                   ))}
                 </ul>
+                {/* Add Steps Here */}
+        {selectedMeal.steps && (
+  <div className="steps-section">
+    <h3 className="steps-title">Steps</h3>
+    <ol className="steps-list">
+      {selectedMeal.steps.map((step, index) => (
+        <li key={index}>{step}</li>
+      ))}
+    </ol>
+  </div>
+)}
               </div>
             </div>
           </div>

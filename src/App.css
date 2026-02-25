@@ -260,3 +260,22 @@ body {
 .app-container {
   animation: fadeScale 0.7s ease-out;
 }
+/* Steps */
+.steps-section {
+  margin-top: 20px;
+}
+
+.steps-title {
+ margin-top: 8px;
+  margin-bottom: 6px;
+}
+
+.steps-list {
+ padding-left: 18px;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+
+
+
