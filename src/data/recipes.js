@@ -83,5 +83,40 @@ export const cuisines = {
         "Simmer gently until rice and meat are fully cooked."
       ]
     }
-  ]
+  ],
+  Mexican: [ 
+    { 
+      name: "Tacos", 
+      img: "https://images.unsplash.com/photo-1601924582971-df6b0f4f6f5b", 
+      description: "Soft tortillas filled with seasoned meat and fresh toppings.", 
+      ingredients: ["Tortillas", "Beef", "Onions", "Cilantro", "Lime"], 
+      steps: [ "Cook seasoned beef.", "Warm tortillas.", "Assemble with toppings.", "Serve with lime."
+
+       ] 
+      } 
+    ], 
+  
+  Chinese: [ 
+    { 
+      name: "Kung Pao Chicken", img: "https://images.unsplash.com/photo-1604908554168-3e4e9d8c12c1", 
+        description: "Spicy stir‑fried chicken with peanuts and vegetables.", 
+        ingredients: ["Chicken", "Peanuts", "Chili peppers", "Soy sauce", "Garlic"], 
+        steps: [ "Stir‑fry chicken.", "Add vegetables and chilies.", "Add sauce and peanuts.", "Serve hot with rice." 
+
+        ]
+       } 
+      ], 
+      French: [
+         {
+          name: "Ratatouille", 
+          img: "https://images.unsplash.com/photo-1604908554168-3e4e9d8c12c1", 
+          description: "A Provençal vegetable stew with tomatoes, zucchini, and eggplant.", 
+          ingredients: 
+          ["Tomatoes", "Zucchini", "Eggplant", "Garlic", "Olive oil"], 
+          steps: 
+          [ "Slice vegetables.", "Layer in a dish.", "Bake until tender.", "Serve warm."
+            
+          ]
+         }
+              ]
 };

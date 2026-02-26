@@ -275,6 +275,75 @@ body {
   font-size: 0.95rem;
   color: var(--muted);
 }
+/* Home Page Only */
+.home-view .cuisine-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* always 3 per row */
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.home-view .cuisine-card {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--card);
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(55, 65, 81, 0.9);
+  cursor: pointer;
+  transition: all 0.18s ease-out;
+}
+
+.home-view .cuisine-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-soft);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+}
+
+.home-view .cuisine-image-wrapper {
+  width: 100%;
+  height: 220px; /* tall image area */
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.home-view .cuisine-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-view .cuisine-name {
+  padding: 12px;
+  font-size: 1.1rem;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.home-view .more-button {
+  display: block;
+  margin: 20px auto 0 auto; /* centers the button */
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: rgba(15, 23, 42, 0.9);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: all 0.18s ease-out;
+}
+
+
+.home-view .more-button:hover {
+  border-color: var(--accent);
+  background: radial-gradient(circle at top left, rgba(248, 250, 252, 0.06), rgba(15, 23, 42, 0.95));
+  transform: translateY(-1px);
+}
 
 
 

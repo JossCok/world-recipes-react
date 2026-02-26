@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { cuisines } from "./data/recipes";
 import { cuisineImages } from "./data/cuisineImages";
+import { moreCuisineImages } from "./data/cuisineImages";
 
 import "./App.css";
 
@@ -8,6 +9,7 @@ function App() {
   const [selectedCuisine, setSelectedCuisine] = useState(null);
   const [selectedMeal, setSelectedMeal] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
+  const [showMoreCuisines, setShowMoreCuisines] = useState(false);
 
   return (
     <div className="page-center">
@@ -40,26 +42,69 @@ function App() {
           />
         </div>
 
-        {/* Step 1: Choose cuisine */}
-        {!selectedCuisine && (
-          <div>
-            <h2 className="section-title">Select a cuisine</h2>
-            <div className="cuisine-buttons">
-              {Object.keys(cuisines).map((cuisine) => (
-                <button
-                  key={cuisine}
-                  className="cuisine-button"
-                  onClick={() => {
-                    setSelectedCuisine(cuisine);
-                    setSelectedMeal(null);
-                  }}
-                >
-                  {cuisine}
-                </button>
-              ))}
-            </div>
+       {/* Step 1: Choose cuisine */}
+{!selectedCuisine && (
+  <div className="home-view">
+    <h2 className="section-title">Select a cuisine</h2>
+
+    {/* First 6 cuisines */}
+    <div className="cuisine-grid">
+      {Object.keys(cuisines).map((cuisine) => (
+        <div
+          key={cuisine}
+          className="cuisine-card"
+          onClick={() => {
+            setSelectedCuisine(cuisine);
+            setSelectedMeal(null);
+          }}
+        >
+          <div className="cuisine-image-wrapper">
+            <img
+              src={cuisineImages[cuisine]}
+              alt={cuisine}
+              className="cuisine-image"
+            />
           </div>
-        )}
+          <h3 className="cuisine-name">{cuisine}</h3>
+        </div>
+      ))}
+    </div>
+
+    {/* More cuisines (expanded section) */}
+    {showMoreCuisines && (
+      <div className="cuisine-grid more-grid">
+        {Object.keys(moreCuisineImages).map((cuisine) => (
+          <div
+            key={cuisine}
+            className="cuisine-card"
+            onClick={() => {
+              setSelectedCuisine(cuisine);
+              setSelectedMeal(null);
+            }}
+          >
+            <div className="cuisine-image-wrapper">
+              <img
+                src={moreCuisineImages[cuisine]}
+                alt={cuisine}
+                className="cuisine-image"
+              />
+            </div>
+            <h3 className="cuisine-name">{cuisine}</h3>
+          </div>
+        ))}
+      </div>
+    )}
+
+    {/* Toggle button */}
+    <button
+      className="more-button"
+      onClick={() => setShowMoreCuisines(!showMoreCuisines)}
+    >
+      {showMoreCuisines ? "Less" : "More"}
+    </button>
+  </div>
+)}
+
 
         {/* Step 2: Show meals */}
         {selectedCuisine && !selectedMeal && (
