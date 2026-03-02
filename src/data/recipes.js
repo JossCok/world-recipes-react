@@ -84,39 +84,142 @@ export const cuisines = {
       ]
     }
   ],
-  Mexican: [ 
-    { 
-      name: "Tacos", 
-      img: "https://images.unsplash.com/photo-1601924582971-df6b0f4f6f5b", 
-      description: "Soft tortillas filled with seasoned meat and fresh toppings.", 
-      ingredients: ["Tortillas", "Beef", "Onions", "Cilantro", "Lime"], 
-      steps: [ "Cook seasoned beef.", "Warm tortillas.", "Assemble with toppings.", "Serve with lime."
 
-       ] 
-      } 
-    ], 
-  
-  Chinese: [ 
-    { 
-      name: "Kung Pao Chicken", img: "https://images.unsplash.com/photo-1604908554168-3e4e9d8c12c1", 
-        description: "Spicy stir‑fried chicken with peanuts and vegetables.", 
-        ingredients: ["Chicken", "Peanuts", "Chili peppers", "Soy sauce", "Garlic"], 
-        steps: [ "Stir‑fry chicken.", "Add vegetables and chilies.", "Add sauce and peanuts.", "Serve hot with rice." 
+  Mexican: [
+    {
+      name: "Tacos",
+      img: "https://plus.unsplash.com/premium_photo-1679231519649-cc47a75e6d43?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      description: "Soft tortillas filled with seasoned meat and fresh toppings.",
+      ingredients: ["Tortillas", "Beef", "Onions", "Cilantro", "Lime"],
+      steps: [
+        "Cook seasoned beef.",
+        "Warm tortillas.",
+        "Assemble with toppings.",
+        "Serve with lime."
+      ]
+    }
+  ],
 
-        ]
-       } 
-      ], 
-      French: [
-         {
-          name: "Ratatouille", 
-          img: "https://images.unsplash.com/photo-1604908554168-3e4e9d8c12c1", 
-          description: "A Provençal vegetable stew with tomatoes, zucchini, and eggplant.", 
-          ingredients: 
-          ["Tomatoes", "Zucchini", "Eggplant", "Garlic", "Olive oil"], 
-          steps: 
-          [ "Slice vegetables.", "Layer in a dish.", "Bake until tender.", "Serve warm."
-            
-          ]
-         }
-              ]
+  Chinese: [
+    {
+      name: "Kung Pao Chicken",
+      img: "https://plus.unsplash.com/premium_photo-1723575734758-97e6e862a670?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      description: "Spicy stir‑fried chicken with peanuts and vegetables.",
+      ingredients: ["Chicken", "Peanuts", "Chili peppers", "Soy sauce", "Garlic"],
+      steps: [
+        "Stir‑fry chicken.",
+        "Add vegetables and chilies.",
+        "Add sauce and peanuts.",
+        "Serve hot with rice."
+      ]
+    }
+  ],
+
+  French: [
+    {
+      name: "Ratatouille",
+      img: "https://images.unsplash.com/photo-1630173314503-544080d4dee7?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      description: "A Provençal vegetable stew with tomatoes, zucchini, and eggplant.",
+      ingredients: ["Tomatoes", "Zucchini", "Eggplant", "Garlic", "Olive oil"],
+      steps: [
+        "Slice vegetables.",
+        "Layer in a dish.",
+        "Bake until tender.",
+        "Serve warm."
+      ]
+    }
+  ],
+
+  Japanese: [
+    {
+      name: "Sushi",
+      img: "https://www.themealdb.com/images/media/meals/g046bb1663960946.jpg",
+      description: "Traditional Japanese dish with vinegared rice and seafood.",
+      ingredients: ["Rice", "Nori", "Fish", "Soy sauce", "Wasabi"],
+      steps: [
+        "Cook rice and season with vinegar.",
+        "Place rice on nori sheet.",
+        "Add fish or vegetables.",
+        "Roll tightly and slice.",
+        "Serve with soy sauce and wasabi."
+      ]
+    }
+  ],
+
+  Indian: [
+    {
+      name: "Butter Chicken",
+      img: "https://www.themealdb.com/images/media/meals/wyxwsp1486979827.jpg",
+      description: "Creamy tomato-based curry with tender chicken pieces.",
+      ingredients: ["Chicken", "Tomatoes", "Butter", "Cream", "Spices"],
+      steps: [
+        "Marinate chicken in yogurt and spices.",
+        "Cook chicken until browned.",
+        "Prepare tomato-based curry sauce.",
+        "Add chicken and simmer with cream.",
+        "Serve with naan or rice."
+      ]
+    }
+  ],
+
+  Greek: [
+    {
+      name: "Moussaka",
+      img: "https://www.themealdb.com/images/media/meals/ctg8jd1585563097.jpg",
+      description: "Layered eggplant and minced meat casserole with béchamel sauce.",
+      ingredients: ["Eggplant", "Minced meat", "Tomatoes", "Béchamel sauce"],
+      steps: [
+        "Slice and fry eggplant.",
+        "Cook minced meat with tomatoes.",
+        "Layer eggplant and meat in a dish.",
+        "Top with béchamel sauce.",
+        "Bake until golden."
+      ]
+    }
+  ],
+
+  Thai: [
+    {
+      name: "Pad Thai",
+      img: "https://www.themealdb.com/images/media/meals/uuuspp1511297945.jpg",
+      description: "Stir-fried rice noodles with shrimp, peanuts, and lime.",
+      ingredients: ["Rice noodles", "Shrimp", "Eggs", "Peanuts", "Bean sprouts"],
+      steps: [
+        "Soak rice noodles.",
+        "Stir-fry shrimp and vegetables.",
+        "Add noodles and sauce.",
+        "Scramble eggs into the mix.",
+        "Top with peanuts and lime."
+      ]
+    }
+  ],
+
+  Turkish: [
+    {
+      name: "Kebab",
+      img: "https://www.themealdb.com/images/media/meals/ypxvwv1505333929.jpg",
+      description: "Grilled skewered meat served with flatbread and salad.",
+      ingredients: ["Lamb", "Onions", "Spices", "Flatbread"],
+      steps: [
+        "Marinate lamb with spices.",
+        "Skewer and grill until cooked.",
+        "Serve with bread and salad."
+      ]
+    }
+  ],
+
+  American: [
+    {
+      name: "Cheeseburger",
+      img: "https://images.unsplash.com/photo-1747146132567-e56789e89260?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      description: "Classic American burger with beef patty and cheese.",
+      ingredients: ["Beef patty", "Cheese", "Bun", "Lettuce", "Tomato"],
+      steps: [
+        "Grill beef patty.",
+        "Place patty on bun with cheese.",
+        "Add lettuce and tomato.",
+        "Serve with fries."
+      ]
+    }
+  ]
 };

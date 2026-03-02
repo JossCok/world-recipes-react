@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { cuisines } from "./data/recipes";
-import { cuisineImages } from "./data/cuisineImages";
-import { moreCuisineImages } from "./data/cuisineImages";
+import { cuisineImages, moreCuisineImages } from "./data/cuisineImages";
 
 import "./App.css";
 
@@ -42,69 +41,68 @@ function App() {
           />
         </div>
 
-       {/* Step 1: Choose cuisine */}
-{!selectedCuisine && (
-  <div className="home-view">
-    <h2 className="section-title">Select a cuisine</h2>
+        {/* Step 1: Choose cuisine */}
+        {!selectedCuisine && (
+          <div className="home-view">
+            <h2 className="section-title">Select a cuisine</h2>
 
-    {/* First 6 cuisines */}
-    <div className="cuisine-grid">
-      {Object.keys(cuisines).map((cuisine) => (
-        <div
-          key={cuisine}
-          className="cuisine-card"
-          onClick={() => {
-            setSelectedCuisine(cuisine);
-            setSelectedMeal(null);
-          }}
-        >
-          <div className="cuisine-image-wrapper">
-            <img
-              src={cuisineImages[cuisine]}
-              alt={cuisine}
-              className="cuisine-image"
-            />
-          </div>
-          <h3 className="cuisine-name">{cuisine}</h3>
-        </div>
-      ))}
-    </div>
-
-    {/* More cuisines (expanded section) */}
-    {showMoreCuisines && (
-      <div className="cuisine-grid more-grid">
-        {Object.keys(moreCuisineImages).map((cuisine) => (
-          <div
-            key={cuisine}
-            className="cuisine-card"
-            onClick={() => {
-              setSelectedCuisine(cuisine);
-              setSelectedMeal(null);
-            }}
-          >
-            <div className="cuisine-image-wrapper">
-              <img
-                src={moreCuisineImages[cuisine]}
-                alt={cuisine}
-                className="cuisine-image"
-              />
+            {/* First 6 cuisines */}
+            <div className="cuisine-grid">
+              {Object.keys(cuisineImages).map((cuisine) => (
+                <div
+                  key={cuisine}
+                  className="cuisine-card"
+                  onClick={() => {
+                    setSelectedCuisine(cuisine);
+                    setSelectedMeal(null);
+                  }}
+                >
+                  <div className="cuisine-image-wrapper">
+                    <img
+                      src={cuisineImages[cuisine]}
+                      alt={cuisine}
+                      className="cuisine-image"
+                    />
+                  </div>
+                  <h3 className="cuisine-name">{cuisine}</h3>
+                </div>
+              ))}
             </div>
-            <h3 className="cuisine-name">{cuisine}</h3>
+
+            {/* More cuisines (expanded section) */}
+            {showMoreCuisines && (
+              <div className="cuisine-grid more-grid">
+                {Object.keys(moreCuisineImages).map((cuisine) => (
+                  <div
+                    key={cuisine}
+                    className="cuisine-card"
+                    onClick={() => {
+                      setSelectedCuisine(cuisine);
+                      setSelectedMeal(null);
+                    }}
+                  >
+                    <div className="cuisine-image-wrapper">
+                      <img
+                        src={moreCuisineImages[cuisine]}
+                        alt={cuisine}
+                        className="cuisine-image"
+                      />
+                    </div>
+                    <h3 className="cuisine-name">{cuisine}</h3>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* Toggle button */}
+            <button
+              className="more-button"
+              onClick={() => setShowMoreCuisines(!showMoreCuisines)}
+            >
+              {showMoreCuisines ? "Less" : "More"}
+            </button>
           </div>
-        ))}
-      </div>
-    )}
-
-    {/* Toggle button */}
-    <button
-      className="more-button"
-      onClick={() => setShowMoreCuisines(!showMoreCuisines)}
-    >
-      {showMoreCuisines ? "Less" : "More"}
-    </button>
-  </div>
-)}
-
+        )}
 
         {/* Step 2: Show meals */}
         {selectedCuisine && !selectedMeal && (
@@ -163,17 +161,18 @@ function App() {
                     <li key={ing}>{ing}</li>
                   ))}
                 </ul>
-                {/* Add Steps Here */}
-        {selectedMeal.steps && (
-  <div className="steps-section">
-    <h3 className="steps-title">Steps</h3>
-    <ol className="steps-list">
-      {selectedMeal.steps.map((step, index) => (
-        <li key={index}>{step}</li>
-      ))}
-    </ol>
-  </div>
-)}
+
+                {/* Steps */}
+                {selectedMeal.steps && (
+                  <div className="steps-section">
+                    <h3 className="steps-title">Steps</h3>
+                    <ol className="steps-list">
+                      {selectedMeal.steps.map((step, index) => (
+                        <li key={index}>{step}</li>
+                      ))}
+                    </ol>
+                  </div>
+                )}
               </div>
             </div>
           </div>
