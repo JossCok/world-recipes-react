@@ -216,7 +216,7 @@ export const cuisines = {
 },
 {
       name: "Churros",
-      img: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT07USbz7pkyU5Gs86d60ZVCKBefjmvqaOUiQ&s",
       description: "Crispy fried dough coated in sugar.",
       ingredients: [
         "Flour",

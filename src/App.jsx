@@ -10,6 +10,22 @@ function App() {
   const [searchQuery, setSearchQuery] = useState("");
   const [showMoreCuisines, setShowMoreCuisines] = useState(false);
 
+  // GLOBAL MEALS LIST (for global search)
+  const allMeals = Object.keys(cuisines).flatMap((cuisineName) =>
+    cuisines[cuisineName].map((meal) => ({
+      ...meal,
+      cuisineName,
+    }))
+  );
+
+  // FILTERED GLOBAL SEARCH RESULTS
+  const globalResults =
+    searchQuery.trim().length > 0
+      ? allMeals.filter((meal) =>
+          meal.name.toLowerCase().includes(searchQuery.toLowerCase())
+        )
+      : [];
+
   return (
     <div className="page-center">
       <div className="app-container">
@@ -23,6 +39,7 @@ function App() {
               onClick={() => {
                 setSelectedCuisine(null);
                 setSelectedMeal(null);
+                setSearchQuery("");
               }}
             >
               home
@@ -41,12 +58,40 @@ function App() {
           />
         </div>
 
-        {/* Step 1: Choose cuisine */}
-        {!selectedCuisine && (
+        {/* GLOBAL SEARCH RESULTS (only on home page) */}
+        {!selectedCuisine && !selectedMeal && searchQuery && (
+          <div>
+            <h2 className="section-title">Search results</h2>
+
+            <div className="meals-grid">
+              {globalResults.map((meal) => (
+                <div
+                  key={meal.name}
+                  className="meal-card"
+                  onClick={() => {
+                    setSelectedCuisine(meal.cuisineName);
+                    setSelectedMeal(meal);
+                  }}
+                >
+                  <img src={meal.img} alt={meal.name} className="meal-image" />
+                  <h3 className="meal-name">{meal.name}</h3>
+                  <p className="meal-description">{meal.cuisineName}</p>
+                </div>
+              ))}
+
+              {globalResults.length === 0 && (
+                <p className="no-results">No meals found.</p>
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* Step 1: Choose cuisine (only if no search active) */}
+        {!selectedCuisine && !selectedMeal && !searchQuery && (
           <div className="home-view">
             <h2 className="section-title">Select a cuisine</h2>
 
-            {/* First 6 cuisines */}
+            {/* First cuisines */}
             <div className="cuisine-grid">
               {Object.keys(cuisineImages).map((cuisine) => (
                 <div
@@ -69,7 +114,7 @@ function App() {
               ))}
             </div>
 
-            {/* More cuisines (expanded section) */}
+            {/* More cuisines */}
             {showMoreCuisines && (
               <div className="cuisine-grid more-grid">
                 {Object.keys(moreCuisineImages).map((cuisine) => (
@@ -162,7 +207,6 @@ function App() {
                   ))}
                 </ul>
 
-                {/* Steps */}
                 {selectedMeal.steps && (
                   <div className="steps-section">
                     <h3 className="steps-title">Steps</h3>
