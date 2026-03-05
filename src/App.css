@@ -350,6 +350,15 @@ body {
   transform: translateY(-1px);
 }
 
+/* Footer */
+.app-footer {
+  margin-top: 80px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
 
 
 

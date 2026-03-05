@@ -221,10 +221,16 @@ function App() {
             </div>
           </div>
         )}
+        
+<footer className="app-footer">
+  <p>World Recipes • v1.0</p>
+  <p>Created by Joss</p>
+</footer>
 
       </div>
     </div>
+    
   );
+  
 }
-
 export default App;
