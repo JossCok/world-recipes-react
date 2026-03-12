@@ -1,32 +1,29 @@
-# 🌍 World Recipes App
+# World Recipes
 
-A React-based recipe explorer showcasing cuisines from around the world.  
-Users can browse cuisines, view dishes, and explore detailed recipes with ingredients and steps.
+A React web app showcasing cuisines and meals with a clean, animated UI.  
+Built for portfolio presentation and open-source sharing.
 
 ---
 
 ## ✨ Features
-- Browse cuisines with images (Italian → American)
-- Toggle between main cuisines and expanded cuisines
-- Search meals by name
-- View detailed recipe pages with ingredients and cooking steps
-- Responsive grid layout with clean UI
+- Browse cuisines and meals in a responsive grid
+- Consistent card sizes with smooth hover animations
+- Dark theme with warm accent colors
+- Search bar for quick filtering
+- Meal detail view with ingredients and steps
+- MIT License for open-source use
 
 ---
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js (v16+ recommended)
+- Node.js (v18+ recommended)
 - npm or yarn
 
 ### Installation
 ```bash
-# Clone the repository
-git clone https://github.com/your-username/world-recipes-app.git
-
-# Navigate into the project folder
-cd world-recipes-app
-
-# Install dependencies
+git clone https://github.com/YourUsername/world-recipes.git
+cd world-recipes
 npm install
+npm start
